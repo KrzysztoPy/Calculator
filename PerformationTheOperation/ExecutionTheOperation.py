@@ -10,6 +10,7 @@ def help_option():
 def check_operation(operation):
     abbreviation_list = abbreviation_list_gui()
     # (1+1-1*(3/14))
+    #
     for counter in range(0, operation.__len__()):
         operation[counter] == '(' or operation[counter] == ')'
     print()
