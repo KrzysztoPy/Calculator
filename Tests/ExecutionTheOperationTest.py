@@ -22,7 +22,7 @@ def execution_operation_test():
     # print()
 
     operation = '-21-*2*(2-1)(3/1))(*23)ln(10)+l(10)-s(10)'
-    operation = '-()))+(())+()()'
+    operation = '-())+(()))+()()'
     result = find_sign(operation)
 
     lista = [[1, 'a'], [2, 'b'], [3, 'c'], [4, 'd']]

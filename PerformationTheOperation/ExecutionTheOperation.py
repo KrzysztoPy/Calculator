@@ -106,13 +106,13 @@ def find_sign(operation):
     print('operation', operation)
     print('numbers:', numbers)
     print('sings: ', signs)
-    signs = check_sign(signs)
+    signs = check_bracket(signs)
 
     print(operation)
-    print(convert_number_and_signs_to_operate(signs, numbers))
+    print(combine_numbers_and_characters_into_one_string(signs, numbers))
 
 
-def check_sign(signs):
+def check_bracket(signs):
     copy_signs = signs
     open_bracket_wrong_position = []
     open_bracket_position = []
@@ -160,7 +160,15 @@ def remove_wrong_bracket(signs, open_bracket_wrong_position, close_bracket_wrong
             for position in range(0, signs.__len__()):
                 if number == signs[position][0]:
                     del signs[position]
+                    # close_bracket_wrong_position = [value - 1 for value in close_bracket_wrong_position]
+                    # print(close_bracket_wrong_position)
                     break
+
+        for number in close_bracket_wrong_position[::-1]:
+            for position_signs in range(0, signs.__len__()):
+                if signs[position_signs][0] > number:
+                    signs[position_signs][0] -= 1
+    print(signs)
     return signs
 
 
@@ -168,16 +176,18 @@ def check_backed_bombing(open_bracket_position, close_bracket_position):
     pass
 
 
-def convert_number_and_signs_to_operate(signs, numbers):
-    copy_sings_and_numbers = signs + numbers
-    print(copy_sings_and_numbers)
+def combine_numbers_and_characters_into_one_string(signs, numbers):
+    numbers += [[13, 2]]
+    signs += [i for i in numbers]
     tidy_signs_and_numbers = ''
     counter = 0
-    for repeat in range(0, copy_sings_and_numbers.__len__()):
-        for position in range(0, copy_sings_and_numbers.__len__()):
-            if copy_sings_and_numbers[position][0] <= counter:
+    for repeat in range(0, signs.__len__()):
+        for position in range(0, signs.__len__()):
+            if signs[position][0] == counter:
                 counter += 1
-                tidy_signs_and_numbers += copy_sings_and_numbers[position][1]
+                tidy_signs_and_numbers += signs[position][1]
+                break
+    return tidy_signs_and_numbers
 
 
 def check_correct(operation):
@@ -194,15 +204,8 @@ def check_correct(operation):
     allowed_start_character = None
 
     open = 1
-    c, 1
-    c, 1
-    c, 1
-    c
+
     close = 1
-    c, 1
-    c, 1
-    c, 1
-    c
     # -21*(2*(2-1)*(3/1))(*23)
 
     ##########################
