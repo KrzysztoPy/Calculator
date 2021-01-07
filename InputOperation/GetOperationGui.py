@@ -13,7 +13,7 @@ def full_name_operation_gui():
 
 
 def abbreviation_list_gui():
-    abbreviation_list = ['+', '-', '*', '/', '%', '^', '//', '-/+', '()']
+    abbreviation_list = ['+', '-', '*', '/', '^', '%', 's', 'l', 'ln', '!', '||', '()', '+/-']
     return abbreviation_list
 
 

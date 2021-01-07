@@ -1,5 +1,4 @@
 from InputOperation.GetOperationGui import *
-from GetOperationGui import full_name_operation_gui, abbreviation_list_gui
 
 
 def get_operation():
